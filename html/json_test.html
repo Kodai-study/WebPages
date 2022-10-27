@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>json</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+
+
+<body>
+  <style>
+
+    div{
+      display: flex;
+      width: auto;
+    }
+
+  </style>
+  <!-- spanの項目2つは横並びになる -->
+  <div>
+  <span>
+    <input type="button" value="あばば" name="ばぼぼ" id="hoge">
+    <div id="text">te</div>
+    <select id="drop"></select>
+  </span>
+
+  <span>
+    <table border="1">
+      <th> number </th>
+      <th> power </th>
+      <tr><td>1</td></tr>
+      <tr><td>2</td></tr>
+    </table>
+  </span>
+  </div>
+  <script>
+    const txt = $('#text');   //id=textの要素を取り出し
+    let members = [];
+        /* ドロップダウンメニューを動的に増やす */
+
+    function e(num){
+      const index = select[0].selectedIndex;
+      console.log(index);
+      let table = $("table")[0];
+      members[index].powers.forEach(elm => {
+        /*let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        td.innerHTML = elm;
+        tr.appendChild(td);
+        table.appendChild(tr);*/
+        let row = table.insertRow();
+        let col = row.insertCell();
+        col.innerHTML = table.rows.length - 1;
+        let col2 = row.insertCell();
+        col2.innerHTML = elm;
+      })
+    }
+
+
+    const select = $('#drop');
+    
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    //const url = 'https://localhost:7015/swagger/index.html';
+    /* 指定したURLから要素を取り出す */
+    fetch(url)
+      .then((response) => response.json())    //html要素の中から、json形式で取り出す
+      .then((data) => {
+        
+        data.members.forEach(element => {
+          members.push(element);
+        });
+        txt.text(data.homeTown);
+        select[0].innerHTML += "<option value=" + select[0].length + " > NULL </option>";
+      });  //テキスト要素を変えるときは
+  
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+xhr.send();
+xhr.onload = ()=> {
+  console.log(xhr.response);
+};
+
+    /* ボタンを取得して、中に書いてある値と高さを変更 */
+    const bt = $("#hoge");
+    const button = bt[0];
+    button.value = "hello"; 
+    bt.innerHeight(100);    
+
+  </script>
+</body>
+</html>
