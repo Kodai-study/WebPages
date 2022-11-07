@@ -30,7 +30,6 @@
   <span>
     <table border="1">
       <th> 日付 </th>
-      <th> 時刻 </th>
       <th> ユーザID </th>
       <th> ユーザ名 </th>
     </table>
@@ -43,18 +42,22 @@
     const select = $('#drop');
     let table = $('table')[0];
     
-    //const url = 'https://jsonplaceholder.typicode.com/users';
-    //const url = 'https://localhost:7015/swagger/index.html';
-    const url  = 'https://localhost:7015/api/json';
+    //const url  = 'https://localhost:7015/api/json';
+    const url = "../sample_json/sample_sousa.json";
+
     /* 指定したURLから要素を取り出す */
     fetch(url)
       .then((response) => response.json())    //html要素の中から、json形式で取り出す
       .then((data) => {
-        let row = table.insertRow();
-        row.insertCell().innerHTML = data.date;
-        row.insertCell().innerHTML = data.time;
-        row.insertCell().innerHTML = data.userId;
-        row.insertCell().innerHTML = data.userName;
+        data.forEach(element => {
+          let row = table.insertRow();
+          row.insertCell().innerHTML = element.date;
+          row.insertCell().innerHTML = element.userId;
+          row.insertCell().innerHTML = element.userName;
+          if(element.hoge === undefined){
+            console.log("nassi1");
+          }
+        });
       });  //テキスト要素を変えるときは
   
   let json;
