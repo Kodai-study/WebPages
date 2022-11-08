@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <title>HTML Sample</title>
   <link rel="stylesheet" href="../css/jsonTest.css">
+  <!-- 外部のjavascriptの読み込み -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="../js/sample.js"></script>
 </head>
@@ -16,23 +18,62 @@
   </table>
   <div class="main">
     <h1>あぁぁぁ</h1>
-    <p>ばぁぁぁぁぁぁｘ</p>
     <img src="../img/sample1.jpg">
+    <p>ばぁぁぁぁぁぁｘ</p>
+    <button id="bt" onclick="fadeout()">button</button>
   </div>
 
-<script>
-  fetch("../sample_json/sample_result.json") // jsonファイルの場所
-    .then((response) => {
-    return response.json();
-    })
-    .then((members) =>{
-      console.log(members);
-      e(members);
-  })
+  <div class="checkbox-toggle">
+    ここをクリックまたはタップで開閉します
+  </div>
+  <!--   チェックボックス   -->
+  <div class="checkboxes">
+    選択してください
+    <label>
+      <input type="checkbox">
+      <span>checkbox1</span>
+    </label>
+    <label>
+      <input type="checkbox">
+      <span>checkbox2</span>
+    </label>
+  </div>
 
-</script>
+  <script>
+    fetch("../sample_json/sample_result.json") // jsonファイルの場所
+      .then((response) => {
+        return response.json();
+      })
+      .then((members) => {
+        console.log(members);
+        e(members);
+      })
 
-<button id="bt"> button </button>
+  </script>
+
+  <button type="button" class="btn">BUTTON</button>
+  <table style="border:1px solid #303030;">
+    <tr>
+      <td>商品</td>
+      <td>価格</td>
+      <td class="box"><span class="tag">送料</span></td>
+      <td class="box"><span class="tag">消費税</span></td>
+    </tr>
+
+    <tr>
+      <td>みかん</td>
+      <td>200</td>
+      <td class="box"><span class="tag">100</span></td>
+      <td class="box"><span class="tag">20</span></td>
+    </tr>
+    <tr>
+      <td>りんご</td>
+      <td>500</td>
+      <td class="box"><span class="tag">150</span></td>
+      <td class="box"><span class="tag">50</span></td>
+    </tr>
+  </table>
 
 </body>
+
 </html>

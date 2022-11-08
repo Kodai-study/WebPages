@@ -1,59 +1,58 @@
 {
-    "parts":[
+    "parts": [
         "ID",
         "IC",
         "WORK",
         "DIPSW",
         "R"
     ],
-    "colum":{   
-        "id":"ワークのID",
-        "IC":{
-            "have_1":"IC1の有無",
-            "have_2":"IC2の有無",
-            "dir_1":"IC1の向き",
-            "dir_2":"IC2の向き"
+    "colum": {
+        "id": "ワークのID",
+        "IC": {
+            "have_1": "IC1の有無",
+            "have_2": "IC2の有無",
+            "dir_1": "IC1の向き",
+            "dir_2": "IC2の向き"
         },
-        "WORK":{
-            "have_work":"ワークが正常か",
-            "dir_work":"ワークの向き"
+        "WORK": {
+            "have_work": "ワークが正常か",
+            "dir_work": "ワークの向き"
         }
     },
-    
-    "result":[
+    "result": [
         {
-            "id":"0001",
-            "IC":{
-                "have_1":"OK",
-                "have_2":"OK",
-                "dir_1":"OK",
-                "dir_2":"OK"
+            "id": "0001",
+            "IC": {
+                "have_1": "OK",
+                "have_2": "OK",
+                "dir_1": "OK",
+                "dir_2": "OK"
             },
-            "WORK":"OK",
-            "DIPSW":"1000",
-            "R":{
-                    "4":"NON",
-                    "12":"miss"
+            "WORK": "OK",
+            "DIPSW": "1000",
+            "R": {
+                "4": "NON",
+                "12": "miss"
             },
-            "D":"OK",
-            "LED":"OK"
+            "D": "OK",
+            "LED": "OK"
         },
         {
-            "id":"0001",
-            "IC":{
-                "have_1":"OK",
-                "have_2":"OK",
-                "dir_1":"OK",
-                "dir_2":"OK"
+            "id": "0001",
+            "IC": {
+                "have_1": "OK",
+                "have_2": "OK",
+                "dir_1": "OK",
+                "dir_2": "OK"
             },
-            "WORK":"OK",
-            "DIPSW":"1000",
-            "R":{
-                    "5":"NON",
-                    "12":"miss"
+            "WORK": "OK",
+            "DIPSW": "1000",
+            "R": {
+                "5": "NON",
+                "12": "miss"
             },
-            "D":"OK",
-            "LED":"OK"
+            "D": "OK",
+            "LED": "OK"
         }
     ]
 }

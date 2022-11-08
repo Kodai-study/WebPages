@@ -1,31 +1,31 @@
 .checkbox-toggle {
-    width: 362px;
-    padding: 1em;
-    text-align: center;
-    cursor: pointer;
-    background-color: skyblue;
-  }
+  width: 362px;
+  padding: 1em;
+  text-align: center;
+  cursor: pointer;
+  background-color: skyblue;
+}
 
-  /* チェックボックス */
-  .checkboxes {
-    display: flex;
-    flex-direction: column;
-    width: 360px;
-    padding: 1em;
-    border: 1px solid skyblue;
-    display: none;
-  }
+/* チェックボックス */
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  padding: 1em;
+  border: 1px solid skyblue;
+  display: none;
+}
 
-  .id{
-      width : 100px;
-  }
+.id {
+  width: 100px;
+}
 
-  th{
-    overflow: hidden;
-    /*white-space: nowrap;*/
-  }
+th {
+  overflow: hidden;
+  /*white-space: nowrap;*/
+}
 
-  table{
-    width: auto;
-    height: 80px;
-  }
+table {
+  width: auto;
+  height: 80px;
+}
