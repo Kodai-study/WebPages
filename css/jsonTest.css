@@ -1,15 +1,76 @@
-#bt{
-    display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
+h1{
+    font-size: 6em;
 }
-#bt:active{
-    /*ボタンを押したとき*/
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    border-bottom: none;/*線を消す*/
+
+#ID{
+    /*visibility: collapse;*/
+    display: none;
+}
+
+th{
+    display: none;
+}
+
+@keyframes my-fade-in {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
+  
+  table{  
+    /* .boxが「my-fade-in」で状態変化するように指定 */
+    animation-name:     my-fade-in;
+    animation-duration: 0.5s;
+  }
+
+  /* チェックボックスの表示切替ボタン */
+.checkbox-toggle {
+    width: 362px;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    background-color: skyblue;
+  }
+  
+  /* チェックボックス */
+  .checkboxes {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    padding: 1em;
+    border: 1px solid skyblue;
+  }
+
+  td{
+    border:1px solid #303030;
+    height:26px;
+    max-height:26px;
+    width:50px;
+    text-align:center;
+    }
+    .tag{
+    display:inline-block;
+    overflow:hidden;
+    height:20px;
+    max-height:20px;
+    line-height:20px;
+    }
+
+    #bt{
+      display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+  }
+  #bt:active{
+      /*ボタンを押したとき*/
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+    }

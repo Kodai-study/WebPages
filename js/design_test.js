@@ -8,7 +8,7 @@ $(function () {
   //.accordion_oneの中の.accordion_headerがクリックされたら
   $('#bt').click(function () {
     //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerの横幅を開いたり閉じたりする。
-    $('.inner_IC').animate({ width: 'toggle',fontSize: 'toggle'});
+    $('.inner_IC').animate({ "width": 'toggle',fontSize: 'toggle'},250);
     $('.inner_IC').toggleClass("open");
   });
 });
