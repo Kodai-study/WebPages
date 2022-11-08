@@ -19,3 +19,13 @@
   .id{
       width : 100px;
   }
+
+  th{
+    overflow: hidden;
+    /*white-space: nowrap;*/
+  }
+
+  table{
+    width: auto;
+    height: 80px;
+  }
