@@ -36,7 +36,7 @@ jQuery(function () {
 
 $(function () {
     $(".btn").on('click', function () {
-        $('.box').animate({ "width": "toggle" }, 100);
+        $('.box').animate({ width: "toggle" }, 100);
     });
 });
 

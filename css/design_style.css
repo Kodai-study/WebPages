@@ -22,10 +22,23 @@
 
 th {
   overflow: hidden;
-  /*white-space: nowrap;*/
+  height: 80px;
+  width: 100px;
 }
 
+/*TODO 表が画面からはみ出たときにスクロールできるようにする*/
 table {
   width: auto;
   height: 80px;
+  overflow: hidden;
+}
+
+.inner {
+  font-size: 0.7em;
+}
+
+.inner_IC,
+.inner_WORK,
+.inner_R {
+  display: none;
 }
