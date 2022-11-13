@@ -16,29 +16,29 @@
   display: none;
 }
 
-.id {
-  width: 100px;
+th {
+  min-width: 100px;
 }
 
-th {
-  overflow: hidden;
+th.outer {
   height: 80px;
-  width: 100px;
+  min-width: 100px;
+  min-width: 100px;
 }
+
 
 /*TODO 表が画面からはみ出たときにスクロールできるようにする*/
-table {
-  width: auto;
-  height: 80px;
-  overflow: hidden;
+
+#gyouretu {
+  overflow-x: scroll;
+  max-width: 80%;
 }
 
-.inner {
-  font-size: 0.7em;
-}
 
 .inner_IC,
 .inner_WORK,
 .inner_R {
+  max-width: 80px;
+  min-width: 80px;
   display: none;
 }

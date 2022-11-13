@@ -6,7 +6,8 @@ crossorigin = "anonymous"
 
 $(function () {
   $('#bt').click(function () {
-    $('.inner_IC').animate({ "width": 'toggle', fontSize: 'toggle' }, 250);
+    //$('.inner_IC').animate({ "width": 'toggle', fontSize: 'toggle' }, 250);
+    $('.inner_IC').animate({ "width": 'toggle'}, 250);
   });
 });
 
