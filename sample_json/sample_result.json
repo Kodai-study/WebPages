@@ -108,6 +108,78 @@
             },
             "D": "OK",
             "LED": "OK"
+        },
+        {
+            "id": "0003",
+            "IC": {
+                "result": "OK",
+                "have_1": "OK",
+                "have_2": "OK",
+                "dir_1": "OK",
+                "dir_2": "OK"
+            },
+            "WORK": {
+                "result": "OK",
+                "have_work": "OK",
+                "dir_work": "OK"
+            },
+            "DIPSW": "1000",
+            "R": {
+                "result": "OK",
+                "1": "OK",
+                "2": "OK",
+                "3": "OK",
+                "4": "OK",
+                "5": "OK",
+                "6": "OK",
+                "7": "OK",
+                "8": "OK",
+                "9": "OK",
+                "10": "OK",
+                "11": "OK",
+                "12": "OK",
+                "13": "OK",
+                "14": "OK",
+                "15": "OK"
+            },
+            "D": "OK",
+            "LED": "OK"
+        },
+        {
+            "id": "0004",
+            "IC": {
+                "result": "NG",
+                "have_1": "OK",
+                "have_2": "NG",
+                "dir_1": "OK",
+                "dir_2": "OK"
+            },
+            "WORK": {
+                "result": "warning",
+                "have_work": "OK",
+                "dir_work": "△"
+            },
+            "DIPSW": "1000",
+            "R": {
+                "result": "NG",
+                "1": "OK",
+                "2": "OK",
+                "3": "OK",
+                "4": "OK",
+                "5": "OK",
+                "6": "OK",
+                "7": "OK",
+                "8": "OK",
+                "9": "NG",
+                "10": "OK",
+                "11": "OK",
+                "12": "OK",
+                "13": "OK",
+                "14": "OK",
+                "15": "OK"
+            },
+            "D": "OK",
+            "LED": "OK"
         }
     ]
 }

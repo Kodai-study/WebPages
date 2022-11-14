@@ -3,7 +3,7 @@
   padding: 1em;
   text-align: center;
   cursor: pointer;
-  background-color: skyblue;
+  background-color: rgb(105, 189, 223);
 }
 
 /* チェックボックス */
@@ -42,3 +42,43 @@ th.outer {
   min-width: 80px;
   display: none;
 }
+/*btのデザイン*/
+#bt {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+#bt:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+/*1行毎の色の変化*/
+table td {
+	background: #eee;
+}
+table tr:nth-child(odd) td {
+	background: #fff;
+}
+
+/*TODO 検査項目のOKの部分は　spanタグ、OKクラスで囲む*/
+span.OK{
+  font-size: 10em;
+  color: chartreuse;
+}
+
+/*TODO 検査項目のNGの部分は　spanタグ、NGクラスで囲む*/
+span.NG{
+  font-size: 10em;
+  color: red;
+}
+
+/*TODO 設定を開閉するときに矢印を付ける*/
+
+/*抵抗のレイアウトを考える*/
