@@ -18,6 +18,11 @@
 
 th {
   min-width: 100px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
 }
 
 th.outer {
@@ -42,40 +47,46 @@ th.outer {
   min-width: 80px;
   display: none;
 }
+
 /*btのデザイン*/
 #bt {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #668ad8;/*ボタン色*/
+  background: #668ad8;
+  /*ボタン色*/
   color: #FFF;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
 }
+
 #bt:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+  transform: translateY(4px);
+  /*下に動く*/
+  border-bottom: none;
+  /*線を消す*/
 }
 
 /*1行毎の色の変化*/
 table td {
-	background: #eee;
+  background: #eee;
 }
+
 table tr:nth-child(odd) td {
-	background: #fff;
+  background: #fff;
 }
 
 /*TODO 検査項目のOKの部分は　spanタグ、OKクラスで囲む*/
-span.OK{
-  font-size: 10em;
+span.OK {
+  /*font-size: 10em;*/
   color: chartreuse;
 }
 
-/*TODO 検査項目のNGの部分は　spanタグ、NGクラスで囲む*/
-span.NG{
-  font-size: 10em;
+/*TODO 強調させる方法を考える。文字の大きさを、テーブルのサイズに合わせる*/
+span.NG {
+  /*font-size: 10em;*/
   color: red;
 }
 

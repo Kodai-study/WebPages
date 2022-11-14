@@ -3,14 +3,21 @@ integrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 crossorigin = "anonymous"
 
 
-
+/**
+ *  id=bt のボタンが押されたときの
+ */
 $(function () {
   $('#bt').click(function () {
     //$('.inner_IC').animate({ "width": 'toggle', fontSize: 'toggle' }, 250);
-    $('.inner_IC').animate({ "width": 'toggle'}, 250);
+    $('.inner_IC').animate({ "width": 'toggle' }, 250);
   });
 });
 
+/**
+ * 大分類をクリックしたときの処理。
+ * 詳細項目がアニメーションで出てくる
+ * @param {string} name 大分類となる部品の名前
+ */
 function toggleDetails(name) {
   $('.inner_' + name).animate({ "width": 'toggle', fontSize: 'toggle' }, 250);
 }
@@ -94,11 +101,27 @@ function setResult(member) {
 }
 
 
+/**
+ * 
+ * @param {tr要素} row  要素を追加する行、CreateRowで作成されたtrタグの要素
+ * @param {td要素の文字列} result 追加する文字列。セルが作成されてこの文字列が入る
+ * @param {親になる大要素} partsName 親になる(そこから開閉する)大分類の要素。
+ */
 function createChild(row, result, partsName) {
+  let span = document.createElement("span");
   cell = row.insertCell();
-  cell.append(result);
   if (partsName != null)
     cell.classList.add("inner_" + partsName);
+
+  //OKかNGかでクラス分け
+  if (result === "OK")
+    span.classList.add("OK");
+  else
+    span.classList.add("NG");
+
+  span.append(result);
+  cell.append(span);
+
 }
 
 
@@ -120,6 +143,8 @@ function addDetail(members, name) {
   let index = 0;
   for (index = 0; index < colums.children.length; index++) {
     let target = colums.children[index];
+
+    // nameの要素が見つかったら、場所を保存して、ポインタに設定
     if (target.textContent === name) {
       target.onclick = () => { toggleDetails(name) };
       target.style.cursor = "pointer";
