@@ -25,24 +25,24 @@
       </tr>
     </table>
   </div>
-  <form>
+  <form name="form1">
     <div class="checkbox-toggle"> 設定 </div>
     <div class="checkboxes">
       <label>
-        <input type="checkbox">
-        <span>checkbox1</span>
+        <input type="checkbox" id="checkbox1" name="check" value="0">
+        <span>IC</span>
       </label>
       <label>
-        <input type="checkbox">
-        <span>checkbox2</span>
+        <input type="checkbox" id="checkbox2" name="check" value="1">
+        <span>WORK</span>
       </label>
       <label>
-        <input type="radio" name="name1" id="radio1">
-        <span>saldkj</span>
+        <input type="radio" name="resultsort" value = "OK" id="radio1">
+        <span>OK</span>
       </label>
       <label>
-        <input type="radio" name="name1">
-        <span>asdf</span>
+        <input type="radio" name="resultsort" value = "NG">
+        <span>NG</span>
       </label>
       <label>
         <select>
@@ -51,8 +51,9 @@
           <option value="3">three</option>
         </select>
       </label>
+      <input type="submit" value="select" onclick="clickBtn1()" />
     </div>
-  </form>
+    </form>
   <button id="bt">hello</button>
 </body>
 <script>
@@ -69,6 +70,22 @@
   });
 
   getData();
+
+  function clickBtn1() {
+    let str = "";
+    const resultsort = document.form1.resultsort;
+
+    for (let i = 0; i < color1.length; i++) {
+      if (resultsort[i].checked) {//(name1[i].checked === true)と同じ
+        str = resultsort[i].value;
+        break;
+      }
+    }
+    document.getElementById("span1").textContent = str;
+  }
+
+  
+
 </script>
 
 <br>○
