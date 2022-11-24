@@ -39,16 +39,22 @@ th.outer {
   max-width: 80%;
 }
 
-[class ^= "inner_"]{
-display: none;
+[class ^="inner_"] {
+  display: none;
 }
 
-th.inner_IC{
+th[class ^="inner_"] {
   background-color: #9dcdd7f0;
 }
-th.inner_WORK{
+
+th.inner_IC {
   background-color: #9dcdd7f0;
 }
+
+th.inner_WORK {
+  background-color: #9dcdd7f0;
+}
+
 th.inner_R {
   background-color: #9dcdd7f0;
   max-width: 40px;

@@ -39,25 +39,25 @@
       </label>
 
       <label>
-      <input type="checkbox" id="checkbox3" name="check" value="DIPSW">
+        <input type="checkbox" id="checkbox3" name="check" value="DIPSW">
         <span>DIPSW</span>
       </label>
 
       <label>
-      <input type="checkbox" id="checkbox4" name="check" value="R">
+        <input type="checkbox" id="checkbox4" name="check" value="R">
         <span>R</span>
       </label>
 
       <label>
-        <input type="radio" name="resultsort" value = "OK" id="radio1">
+        <input type="radio" name="resultsort" value="OK" id="radio1">
         <span>OK</span>
       </label>
 
       <label>
-        <input type="radio" name="resultsort" value = "NG">
+        <input type="radio" name="resultsort" value="NG">
         <span>NG</span>
       </label>
-  <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
+      <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
       <label>
         <div>
         <input type="date" name="term"id="term1">
@@ -76,11 +76,15 @@
 
       <input type="submit" value="select" onclick="clickBtn1()" />
     </div>
-    </form>
+  </form>
   <button id="bt">hello</button>
 </body>
 <script>
 
+
+  table = $('table')[0];
+
+  setTitle();
   // 設定項目をアコーディオンで開閉する
   jQuery(function () {
     // チェックボックスの表示切替ボタンのクリックイベントを検知
@@ -92,9 +96,9 @@
     });
   });
 
-  getData();
-
-  /*function clickBtn1() {
+  //getData();
+  getDataWithAPI();
+  function clickBtn1() {
     let str = "";
     const resultsort = document.form1.resultsort;
 
@@ -105,9 +109,9 @@
       }
     }
     document.getElementById("span1").textContent = str;
-  }*/
+  }
 
-  
+
 
 </script>
 
