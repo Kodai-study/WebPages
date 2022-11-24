@@ -69,8 +69,6 @@ function getDataWithAPI(params) {
     })
     .then((members) => {
       let json = JSON.parse(members);
-      table = $('table')[0];
-      setTitle();
       setResultWithAPI(json);
 
     })
