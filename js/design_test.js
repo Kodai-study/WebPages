@@ -71,13 +71,80 @@ function getDataWithAPI(params) {
     .then((members) => {
       let json = JSON.parse(members);
       table = $('table')[0];
-      
+      setResultWithAPI(json);
+
     })
 }
 
 
 function setResultWithAPI(members) {
   members.forEach(element => {
+    row = table.insertRow();
+    row.insertCell().append(element.workID);
+    row.insertCell().append(element.startTime);
+    row.insertCell().append(element.allResult);
+    row.insertCell().append(element.brightness);
+    row.insertCell().append(element.humidity);
+    row.insertCell().append(element.temprature);
+
+    {
+      const ic = element.result.ic;
+      createChild(row, ic.allResult, null);
+      createChild(row, ic.iC1_have, "IC");
+      createChild(row, ic.iC2_have, "IC");
+      createChild(row, ic.iC1_dir, "IC");
+      createChild(row, ic.iC2_dir, "IC");
+    }
+    /* WORKの結果代入 */
+    {
+      const work = element.result.work;
+      createChild(row, work.allResult, null);
+      createChild(row, work.is_OK, "WORK");
+      createChild(row, work.dir, "WORK");
+    }
+
+    {
+      //TODO 合格、不合格かなどを見て表示を見やすくする
+      const resigter = element.result.r;
+      createChild(row, resigter.allResult, null);
+      for (let i = 0; i < 15; i++) {
+        createChild(row, resigter.results[i], "R");
+      }
+    }
+
+    {
+      const diode = element.result.diode;
+      createChild(row, diode.allResult, null);
+      createChild(row, diode.dir, "DIPSW");
+      createChild(row, diode.have, "DIPSW");
+    }
+
+    {
+      const LED = element.result.led;
+      createChild(row, LED.allResult, null);
+      createChild(row, LED.redDir, "LED");
+      createChild(row, LED.greenDir, "LED");
+      createChild(row, LED.whiteDir, "LED");
+      createChild(row, LED.redHave, "LED");
+      createChild(row, LED.greenHave, "LED");
+      createChild(row, LED.whiteHave, "LED");
+    }
+
+    {
+      const transistor = element.result.tr;
+      createChild(row, transistor.allResult, null);
+      createChild(row, transistor.dir, "TR");
+      createChild(row, transistor.is_OK, "TR");
+    }
+
+
+    {
+      if (element.result.dipSw.allResult === "〇")
+        createChild(row, element.result.dipSw.allResult, null);
+      else
+        createChild(row, element.result.dipSw.pattern, null);
+    }
+
 
   })
 }
@@ -108,10 +175,6 @@ function setResult(member) {
     }
 
     {
-      createChild(row, element.DIPSW, null);
-    }
-
-    {
       //TODO 合格、不合格かなどを見て表示を見やすくする
       const resigter = element.R;
       createChild(row, resigter.result, null);
@@ -119,6 +182,12 @@ function setResult(member) {
         createChild(row, resigter[i], "R");
       }
     }
+
+    {
+      createChild(row, element.DIPSW, null);
+    }
+
+
   });
 
 }
@@ -137,7 +206,7 @@ function createChild(row, result, partsName) {
     cell.classList.add("inner_" + partsName);
 
   //OKかNGかでクラス分け
-  if (result === "OK")
+  if (result === "〇")
     span.classList.add("OK");
   else
     span.classList.add("NG");

@@ -1,0 +1,197 @@
+[
+    {
+        "startTime": "2001-01-01T16:06:00",
+        "allResult": "\u0000",
+        "workID": 1,
+        "temprature": 22.6,
+        "humidity": 30.2,
+        "brightness": 50,
+        "result": {
+            "ic": {
+                "allResult": "×",
+                "iC1_dir": "×",
+                "iC2_dir": "〇",
+                "iC1_have": "〇",
+                "iC2_have": "〇"
+            },
+            "work": {
+                "allResult": "〇",
+                "dir": "〇",
+                "is_OK": "〇"
+            },
+            "r": {
+                "allResult": "×",
+                "results": [
+                    "△",
+                    "×",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇"
+                ]
+            },
+            "diode": {
+                "allResult": "〇",
+                "dir": "〇",
+                "have": "〇"
+            },
+            "led": {
+                "allResult": "×",
+                "redDir": "×",
+                "greenDir": "〇",
+                "whiteDir": "〇",
+                "redHave": "〇",
+                "greenHave": "〇",
+                "whiteHave": "×"
+            },
+            "tr": {
+                "allResult": "〇",
+                "dir": "〇",
+                "is_OK": "〇"
+            },
+            "dipSw": {
+                "allResult": "×",
+                "pattern": "0011"
+            }
+        }
+    },
+    {
+        "startTime": "1999-01-01T16:06:00",
+        "allResult": "\u0000",
+        "workID": 2,
+        "temprature": 22.4,
+        "humidity": 30.7,
+        "brightness": 550,
+        "result": {
+            "ic": {
+                "allResult": "×",
+                "iC1_dir": "×",
+                "iC2_dir": "〇",
+                "iC1_have": "〇",
+                "iC2_have": "〇"
+            },
+            "work": {
+                "allResult": "〇",
+                "dir": "〇",
+                "is_OK": "〇"
+            },
+            "r": {
+                "allResult": "〇",
+                "results": [
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇"
+                ]
+            },
+            "diode": {
+                "allResult": "〇",
+                "dir": "〇",
+                "have": "〇"
+            },
+            "led": {
+                "allResult": "〇",
+                "redDir": "〇",
+                "greenDir": "〇",
+                "whiteDir": "〇",
+                "redHave": "〇",
+                "greenHave": "〇",
+                "whiteHave": "〇"
+            },
+            "tr": {
+                "allResult": "〇",
+                "dir": "〇",
+                "is_OK": "〇"
+            },
+            "dipSw": {
+                "allResult": "〇",
+                "pattern": "1000"
+            }
+        }
+    },
+    {
+        "startTime": "2000-01-01T16:06:00",
+        "allResult": "\u0000",
+        "workID": 3,
+        "temprature": 20.2,
+        "humidity": 36.4,
+        "brightness": 50.3,
+        "result": {
+            "ic": {
+                "allResult": "〇",
+                "iC1_dir": "〇",
+                "iC2_dir": "〇",
+                "iC1_have": "〇",
+                "iC2_have": "〇"
+            },
+            "work": {
+                "allResult": "〇",
+                "dir": "〇",
+                "is_OK": "〇"
+            },
+            "r": {
+                "allResult": "〇",
+                "results": [
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇",
+                    "〇"
+                ]
+            },
+            "diode": {
+                "allResult": "〇",
+                "dir": "〇",
+                "have": "〇"
+            },
+            "led": {
+                "allResult": "×",
+                "redDir": "×",
+                "greenDir": "〇",
+                "whiteDir": "〇",
+                "redHave": "〇",
+                "greenHave": "〇",
+                "whiteHave": "〇"
+            },
+            "tr": {
+                "allResult": "〇",
+                "dir": "〇",
+                "is_OK": "〇"
+            },
+            "dipSw": {
+                "allResult": "〇",
+                "pattern": "1000"
+            }
+        }
+    }
+]
