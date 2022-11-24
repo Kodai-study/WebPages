@@ -29,27 +29,40 @@
     <div class="checkbox-toggle"> 設定 </div>
     <div class="checkboxes">
       <label>
-        <input type="checkbox" id="checkbox1" name="check" value="0">
+        <input type="checkbox" id="checkbox1" name="check" value="IC">
         <span>IC</span>
       </label>
+
       <label>
-        <input type="checkbox" id="checkbox2" name="check" value="1">
+        <input type="checkbox" id="checkbox2" name="check" value="WORK">
         <span>WORK</span>
       </label>
+
+      <label>
+      <input type="checkbox" id="checkbox3" name="check" value="DIPSW">
+        <span>DIPSW</span>
+      </label>
+
+      <label>
+      <input type="checkbox" id="checkbox4" name="check" value="R">
+        <span>R</span>
+      </label>
+
       <label>
         <input type="radio" name="resultsort" value = "OK" id="radio1">
         <span>OK</span>
       </label>
+
       <label>
         <input type="radio" name="resultsort" value = "NG">
         <span>NG</span>
       </label>
+  <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
       <label>
-        <select>
-          <option value="1">one </option>
-          <option value="2">two</option>
-          <option value="3">three</option>
-        </select>
+        <input type="date" name="term"id="term1">
+        <span>～</span>
+        <input type="date" name="term"id="term2">
+        <span>まで</span>
       </label>
       <input type="submit" value="select" onclick="clickBtn1()" />
     </div>
@@ -71,18 +84,18 @@
 
   getData();
 
-  function clickBtn1() {
+  /*function clickBtn1() {
     let str = "";
     const resultsort = document.form1.resultsort;
 
     for (let i = 0; i < color1.length; i++) {
-      if (resultsort[i].checked) {//(name1[i].checked === true)と同じ
+      if (resultsort[i].checked) {
         str = resultsort[i].value;
         break;
       }
     }
     document.getElementById("span1").textContent = str;
-  }
+  }*/
 
   
 
