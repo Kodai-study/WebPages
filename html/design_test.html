@@ -59,11 +59,21 @@
       </label>
   <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
       <label>
+        <div>
         <input type="date" name="term"id="term1">
-        <span>～</span>
-        <input type="date" name="term"id="term2">
+        </div>
+
+        <div>
+        <input type="time" name="time" id="time">
+        </div>
+        <div><span>～</span></div>
+        <div><input type="date" name="term"id="term2"></div>
+        
+        <input type="time" name="time" id="time1">
+
         <span>まで</span>
       </label>
+
       <input type="submit" value="select" onclick="clickBtn1()" />
     </div>
     </form>
