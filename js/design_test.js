@@ -36,7 +36,6 @@ function getData() {
       return response.json();
     })
     .then((members) => {
-      console.log(members);
       table = $('table')[0];
       colums = table.insertRow();
       members.parts.forEach(element => {
@@ -57,6 +56,30 @@ function getData() {
       setResult(members.result);
 
     })
+}
+
+/**
+ *  APIを叩いてデータを貰って表示
+ * @param {*} params 
+ */
+function getDataWithAPI(params) {
+  fetch("https://rbpc04:7015/api/result") // jsonファイルの場所
+    .then((response) => {
+      console.log("hello");
+      return response.text();
+    })
+    .then((members) => {
+      let json = JSON.parse(members);
+      table = $('table')[0];
+      
+    })
+}
+
+
+function setResultWithAPI(members) {
+  members.forEach(element => {
+
+  })
 }
 
 
