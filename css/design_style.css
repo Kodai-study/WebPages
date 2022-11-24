@@ -39,16 +39,20 @@ th.outer {
   max-width: 80%;
 }
 
-[class^="inner_"] {
-  display: none;
+[class ^= "inner_"]{
+display: none;
 }
 
-.inner_IC,
-.inner_WORK,
-.inner_R {
-  max-width: 80px;
-  min-width: 80px;
-  display: none;
+th.inner_IC{
+  background-color: #9dcdd7f0;
+}
+th.inner_WORK{
+  background-color: #9dcdd7f0;
+}
+th.inner_R {
+  background-color: #9dcdd7f0;
+  max-width: 40px;
+  min-width: 40px;
 }
 
 /*btのデザイン*/
@@ -84,7 +88,7 @@ table tr:nth-child(odd) td {
 /*TODO 検査項目のOKの部分は　spanタグ、OKクラスで囲む*/
 span.OK {
   /*font-size: 10em;*/
-  color: chartreuse;
+  color: rgb(107, 175, 40);
 }
 
 /*TODO 強調させる方法を考える。文字の大きさを、テーブルのサイズに合わせる*/
@@ -92,7 +96,5 @@ span.NG {
   /*font-size: 10em;*/
   color: red;
 }
-
-/*TODO 設定を開閉するときに矢印を付ける*/
 
 /*抵抗のレイアウトを考える*/
