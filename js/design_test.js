@@ -22,10 +22,8 @@ function toggleDetails(name) {
   $('.inner_' + name).animate({ "width": 'toggle', fontSize: 'toggle' }, 250);
 }
 
-
 let table;
 let colums;
-
 
 /**
  * jsonからデータを取得して、項目を設定する
@@ -37,6 +35,7 @@ function getData() {
     })
     .then((members) => {
       table = $('table')[0];
+      setTitle();
       colums = table.insertRow();
       members.parts.forEach(element => {
         th = document.createElement('th');
@@ -71,8 +70,27 @@ function getDataWithAPI(params) {
     .then((members) => {
       let json = JSON.parse(members);
       table = $('table')[0];
+      setTitle();
       setResultWithAPI(json);
 
+    })
+}
+
+function setTitle() {
+  titleRow = table.insertRow();
+  fetch("../sample_json/result_Titles.json") // jsonファイルの場所
+    .then((response) => {
+      return response.json();
+    })
+    .then((members) => {
+      colums = table.insertRow();
+      members.forEach(element => {
+        th = document.createElement('th');
+        th.append(element[1]);
+        th.classList.add(element[0]);
+        colums.append(th);
+        addDetail(element.slice(2), element[0]);
+      })
     })
 }
 
@@ -80,12 +98,12 @@ function getDataWithAPI(params) {
 function setResultWithAPI(members) {
   members.forEach(element => {
     row = table.insertRow();
-    row.insertCell().append(element.workID);
-    row.insertCell().append(element.startTime);
-    row.insertCell().append(element.allResult);
-    row.insertCell().append(element.brightness);
-    row.insertCell().append(element.humidity);
-    row.insertCell().append(element.temprature);
+    createChild(row, element.workID, null, false);
+    createChild(row, element.startTime, "ID", false);
+    createChild(row, element.allResult, "ID", false);
+    createChild(row, element.brightness, "ID", false);
+    createChild(row, element.humidity, "ID", false);
+    createChild(row, element.temprature, "ID", false);
 
     {
       const ic = element.result.ic;
@@ -115,8 +133,8 @@ function setResultWithAPI(members) {
     {
       const diode = element.result.diode;
       createChild(row, diode.allResult, null);
-      createChild(row, diode.dir, "DIPSW");
-      createChild(row, diode.have, "DIPSW");
+      createChild(row, diode.dir, "DIODE");
+      createChild(row, diode.have, "DIODE");
     }
 
     {
@@ -137,15 +155,12 @@ function setResultWithAPI(members) {
       createChild(row, transistor.is_OK, "TR");
     }
 
-
     {
       if (element.result.dipSw.allResult === "〇")
         createChild(row, element.result.dipSw.allResult, null);
       else
         createChild(row, element.result.dipSw.pattern, null);
     }
-
-
   })
 }
 
@@ -186,10 +201,7 @@ function setResult(member) {
     {
       createChild(row, element.DIPSW, null);
     }
-
-
   });
-
 }
 
 
@@ -199,21 +211,22 @@ function setResult(member) {
  * @param {td要素の文字列} result 追加する文字列。セルが作成されてこの文字列が入る
  * @param {親になる大要素} partsName 親になる(そこから開閉する)大分類の要素。
  */
-function createChild(row, result, partsName) {
+function createChild(row, result, partsName, isBool) {
   let span = document.createElement("span");
   cell = row.insertCell();
   if (partsName != null)
     cell.classList.add("inner_" + partsName);
 
-  //OKかNGかでクラス分け
-  if (result === "〇")
-    span.classList.add("OK");
-  else
-    span.classList.add("NG");
 
+  if (isBool != false) {
+    //OKかNGかでクラス分け
+    if (result === "〇")
+      span.classList.add("OK");
+    else
+      span.classList.add("NG");
+  }
   span.append(result);
   cell.append(span);
-
 }
 
 
@@ -237,7 +250,7 @@ function addDetail(members, name) {
     let target = colums.children[index];
 
     // nameの要素が見つかったら、場所を保存して、ポインタに設定
-    if (target.textContent === name) {
+    if (target.classList.contains(name)) {
       target.onclick = () => { toggleDetails(name) };
       target.style.cursor = "pointer";
       target.append(i);

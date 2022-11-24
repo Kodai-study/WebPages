@@ -39,6 +39,9 @@ th.outer {
   max-width: 80%;
 }
 
+[class^="inner_"] {
+  display: none;
+}
 
 .inner_IC,
 .inner_WORK,
