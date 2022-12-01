@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <div id="gyouretu">
+  <div class="gyouretu">
     <table id="gyou" border="2" bgcolor="#9999ff" style="border:1px solid #303030;">
       <tr>
 
@@ -78,27 +78,34 @@
         <input type="radio" name="resultsort" value="NG">
         <span>NG</span>
       </label>
+
+      <div>
+        <label for="period"></label>
+        <select class="period">
+        <option value="">期間の選択</option>
+        <option value="Y">今年</option>
+        <option value="M">今月</option>
+        <option value="D">今日</option>
+        <option value="other">指定</option>
+        </select>
+      </div>
       <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
-      <label>
+      
         <div>
-        <input type="date" name="term"id="term1">
-        </div>
-        
-
-        <div>
-        <input type="time" name="time" id="time">
+        <input type="date" name="term" class="term1">
+        <input type="time" name="time" class="time">
         </div>
 
-        <div><span>～</span></div>
-
-        <div><input type="date" name="term"id="term2"></div>
-        
-        <input type="time" name="time" id="time1">
+        <div><span>から</span></div>
+        <div>
+        <input type="date" name="term" class="term2">
+        <input type="time" name="time" class="time1">
+        </div>
 
         <span>まで</span>
-      </label>
+      
 
-      <input type="submit" value="select" onclick="clickBtn1()" />
+      <input type="submit" value="select" class = "button" onclick="clickBtn1()" />
     </div>
   </form>
   <button id="bt">hello</button>

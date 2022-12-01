@@ -8,10 +8,11 @@ input[type = checkbox] {
  .settingbox {
     display: inline-block;
     flex-direction: column;
-    width: 360px;
+    width: 300px;
     padding: 1em;
     border: 1px solid skyblue;
     display: none;
+    
   }
 
 input[type = checkbox] + label {
@@ -55,4 +56,3 @@ input[type = checkbox]:checked + label:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-

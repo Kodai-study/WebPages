@@ -1,5 +1,5 @@
 .checkbox-toggle {
-  width: 362px;
+  width: 302px;
   padding: 1em;
   text-align: center;
   cursor: pointer;
@@ -24,9 +24,25 @@ th.outer {
 
 /*TODO 表が画面からはみ出たときにスクロールできるようにする*/
 
-#gyouretu {
+[class=gyouretu] {
   overflow-x: scroll;
   max-width: 80%;
+}
+/*検査情報の固定*/
+.ID{
+  position: sticky;
+  left: 0;
+  color: rgb(2, 2, 2);
+  background-color: rgb(153, 153, 255);
+  &:before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+  }
 }
 
 [class ^="inner_"] {
@@ -49,6 +65,25 @@ th.inner_R {
   background-color: #9dcdd7f0;
   max-width: 40px;
   min-width: 40px;
+}
+/*selectボタンのデザイン*/
+.button {
+  width: 14.5em;
+  height: 3em;
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 10pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 2px 2px;   /* 余白       */
+  background    : #4da6ff;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  opacity       : 1;           /* 透明度     */
+  transition    : .3s;         /* なめらか変化 */
+}
+.button:hover {
+  opacity       : 0.8;         /* カーソル時透明度 */
 }
 
 /*btのデザイン*/
@@ -92,5 +127,3 @@ span.NG {
   /*font-size: 10em;*/
   color: red;
 }
-
-/*抵抗のレイアウトを考える*/
