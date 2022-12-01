@@ -6,16 +6,6 @@
   background-color: rgb(105, 189, 223);
 }
 
-/* チェックボックス */
-.checkboxes {
-  display: flex;
-  flex-direction: column;
-  width: 360px;
-  padding: 1em;
-  border: 1px solid skyblue;
-  display: none;
-}
-
 th {
   min-width: 100px;
   text-align: center;

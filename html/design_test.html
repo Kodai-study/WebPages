@@ -7,6 +7,7 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
   <link rel="stylesheet" href="../css/design_style.css">
+  <link rel="stylesheet" href="../css/commom.css">
   <script src="../js/design_test.js"> </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,26 +28,46 @@
   </div>
   <form name="form1">
     <div class="checkbox-toggle"> 設定 </div>
-    <div class="checkboxes">
+    <div class="settingbox">
+      <div class = "checkboxes">
       <label>
         <input type="checkbox" id="checkbox1" name="check" value="IC">
-        <span>IC</span>
+      <label for ="checkbox1">IC</label>
       </label>
 
       <label>
         <input type="checkbox" id="checkbox2" name="check" value="WORK">
-        <span>WORK</span>
+        <label for ="checkbox2">WORK</label>
       </label>
 
       <label>
-        <input type="checkbox" id="checkbox3" name="check" value="DIPSW">
-        <span>DIPSW</span>
+        <input type="checkbox" id="checkbox3" name="check" value="R">
+        <label for ="checkbox3">R</label>
       </label>
 
       <label>
-        <input type="checkbox" id="checkbox4" name="check" value="R">
-        <span>R</span>
+        <input type="checkbox" id="checkbox4" name="check" value="Di">
+        <label for ="checkbox4">Di</label>
       </label>
+      </div>
+
+      <div class = "checkboxes2">
+        <label>
+          <input type="checkbox" id="checkbox5" name="check" value="LED">
+        <label for ="checkbox5">LED</label>
+        </label>
+  
+        <label>
+          <input type="checkbox" id="checkbox6" name="check" value="Tr">
+          <label for ="checkbox6">Tr</label>
+        </label>
+  
+        <label>
+          <input type="checkbox" id="checkbox7" name="check" value="DIPSw">
+          <label for ="checkbox7">DIPSw</label>
+        </label>
+  
+        </div>
 
       <label>
         <input type="radio" name="resultsort" value="OK" id="radio1">
@@ -62,11 +83,14 @@
         <div>
         <input type="date" name="term"id="term1">
         </div>
+        
 
         <div>
         <input type="time" name="time" id="time">
         </div>
+
         <div><span>～</span></div>
+
         <div><input type="date" name="term"id="term2"></div>
         
         <input type="time" name="time" id="time1">
@@ -90,9 +114,9 @@
     // チェックボックスの表示切替ボタンのクリックイベントを検知
     jQuery('.checkbox-toggle').on('click', function () {
       // チェックボックスの表示をslideToggleで切り替える
-      jQuery('.checkboxes ').slideToggle();
+      jQuery('.settingbox ').slideToggle();
       //jQuery('#gyouretu').slideToggle();
-      jQuery('.checkboxes').css('display', 'flex');
+      jQuery('.settingbox').css('display', 'flex');
     });
   });
 
