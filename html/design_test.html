@@ -29,79 +29,72 @@
   <form name="form1">
     <div class="checkbox-toggle"> 設定 </div>
     <div class="settingbox">
+      <span>---検査項目---</span>
       <div class = "checkboxes">
       <label>
-        <input type="checkbox" id="checkbox1" name="check" value="IC">
+        <input type="checkbox" id="checkbox1" name="check" value="IC" checked>
       <label for ="checkbox1">IC</label>
       </label>
 
       <label>
-        <input type="checkbox" id="checkbox2" name="check" value="WORK">
-        <label for ="checkbox2">WORK</label>
+        <input type="checkbox" id="checkbox2" name="check" value="WORK" checked>
+        <label for ="checkbox2">ワーク</label>
       </label>
 
+      <!--
       <label>
         <input type="checkbox" id="checkbox3" name="check" value="R">
-        <label for ="checkbox3">R</label>
+        <label for ="checkbox3">抵抗</label>
       </label>
+      -->
 
       <label>
-        <input type="checkbox" id="checkbox4" name="check" value="Di">
-        <label for ="checkbox4">Di</label>
+        <input type="checkbox" id="checkbox4" name="check" value="Di"checked>
+        <label for ="checkbox4">ダイオード</label>
       </label>
       </div>
 
+      
       <div class = "checkboxes2">
+        <!--
         <label>
           <input type="checkbox" id="checkbox5" name="check" value="LED">
         <label for ="checkbox5">LED</label>
         </label>
+        -->
   
         <label>
-          <input type="checkbox" id="checkbox6" name="check" value="Tr">
-          <label for ="checkbox6">Tr</label>
+          <input type="checkbox" id="checkbox6" name="check" value="Tr"checked>
+          <label for ="checkbox6">トランジスタ</label>
         </label>
   
         <label>
-          <input type="checkbox" id="checkbox7" name="check" value="DIPSw">
-          <label for ="checkbox7">DIPSw</label>
+          <input type="checkbox" id="checkbox7" name="check" value="DIPSw"checked>
+          <label for ="checkbox7">DIPスイッチ</label>
         </label>
   
         </div>
-
       <label>
         <input type="radio" name="resultsort" value="OK" id="radio1">
-        <span>OK</span>
+        <span>OKのみ</span>
       </label>
 
       <label>
         <input type="radio" name="resultsort" value="NG">
-        <span>NG</span>
+        <span>NGのみ</span>
       </label>
 
-      <!--
-      <div>
-        <label for="period"></label>
-        <select class="period">
-        <option value="">期間の選択</option>
-        <option value="Y">今年</option>
-        <option value="M">今月</option>
-        <option value="D">今日</option>
-        <option value="other">指定</option>
-        </select>
-      </div>
-      -->
       <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
-      
+      <dev>---検査時刻---</dev>
         <div>
-        <input type="date" name="term" class="term1">
-        <input type="time" name="time" class="time">
+        <input type="date" name="term1" class="term1">
+        <input type="time" name="time1" class="time1">
         </div>
 
         <div><span>から</span></div>
         <div>
-        <input type="date" name="term" class="term2">
-        <input type="time" name="time" class="time1">
+        <input type="date" name="term2" class="term2">
+        <input type="time" name="time2" class="time2">
         </div>
 
         <span>まで</span>
@@ -109,7 +102,6 @@
       <input type="submit" value="select" class = "button" onclick="clickBtn1()" />
     </div>
   </form>
-  <!--<button id="bt">hello</button>-->
 </body>
 <script>
 
@@ -146,11 +138,5 @@
 
 
 </script>
-<!--
-<br>○
-<br>
-<br>
-<span class="OK">○</span>
-<span class="NG">✕</span>
--->
+
 </html>
