@@ -80,6 +80,10 @@ input[type = checkbox]:checked + label:before {
   transform: rotate(45deg);
 }
 
+.term1,.term2,.time1,.time2,.OK,.NG{
+  cursor: pointer;
+}
+
 /*selectボタンのデザイン*/
 .button {
   width: 14.5em;
