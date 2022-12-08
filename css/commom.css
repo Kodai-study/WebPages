@@ -9,7 +9,7 @@ td {
 }
 
 th.outer {
-  height: 80px;
+  /*height: 80px;*/
   min-width: 100px;
 }
 
@@ -118,9 +118,8 @@ input[type = checkbox]:checked + label:before {
 .DIPSW,
 .BS{
   position: sticky;
- 
   top:0;
-  left: 0;
+  /*left: 0;*/
   color: rgb(2, 2, 2);
   background-color: rgb(153, 153, 255);
 }
@@ -133,13 +132,13 @@ input[type = checkbox]:checked + label:before {
     height : 100%;
     border : 1px solid rgb(3, 3, 3);
   }
-  .ID{
+  /*.ID{
     z-index: 2;
   }
   
   .IC,.WORK,.DIODE,.TR,.DIPSW,.BS{
     z-index: 1;
-  }
+  }*/
 
 [class ^="inner_"] {
   display: none;
@@ -183,5 +182,3 @@ span.NG {
   /*font-size: 10em;*/
   color: red;
 }
-
-
