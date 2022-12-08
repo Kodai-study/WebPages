@@ -1,5 +1,6 @@
 th {
   min-width: 100px;
+  height: 70px;
   text-align: center;
 }
 
@@ -9,7 +10,6 @@ td {
 
 th.outer {
   height: 80px;
-  min-width: 100px;
   min-width: 100px;
 }
 
@@ -45,11 +45,7 @@ input[type = checkbox] + label {
   margin-bottom: 20px;
   font: 16px/20px 'Open Sans', Arial, sans-serif;
   color: rgb(15, 10, 10);
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  
+  cursor: pointer;  
 }
 
 input[type = checkbox] + label:last-child { margin-bottom: 0; }
@@ -104,14 +100,7 @@ input[type = checkbox]:checked + label:before {
   opacity       : 0.8;         /* カーソル時透明度 */
 }
 
-/*1行毎の色の変化*/
-table td {
-  background: #eee;
-}
 
-table tr:nth-child(odd) td {
-  background: #fff;
-}
 
 /*TODO 表が画面からはみ出たときにスクロールできるようにする*/
 
@@ -126,8 +115,10 @@ table tr:nth-child(odd) td {
 .WORK,
 .DIODE,
 .TR,
-.DIPSW{
+.DIPSW,
+.BS{
   position: sticky;
+ 
   top:0;
   left: 0;
   color: rgb(2, 2, 2);
@@ -146,7 +137,7 @@ table tr:nth-child(odd) td {
     z-index: 2;
   }
   
-  .IC,.WORK,.DIODE,.TR,.DIPSW{
+  .IC,.WORK,.DIODE,.TR,.DIPSW,.BS{
     z-index: 1;
   }
 
@@ -172,6 +163,15 @@ th.inner_R {
   min-width: 40px;
 }
 
+/*1行毎の色の変化*/
+table td {
+  background: #eee;
+}
+
+table tr:nth-child(odd) td {
+  background: #fff;
+}
+
 /*TODO 検査項目のOKの部分は　spanタグ、OKクラスで囲む*/
 span.OK {
   /*font-size: 10em;*/
@@ -183,3 +183,5 @@ span.NG {
   /*font-size: 10em;*/
   color: red;
 }
+
+
