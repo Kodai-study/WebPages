@@ -7,6 +7,7 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
   <link rel="stylesheet" href="../css/design_style.css">
+  <link rel="stylesheet" href="../css/commom.css">
   <script src="../js/design_test.js"> </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-  <div id="gyouretu">
+  <div class="gyouretu">
     <table id="gyou" border="2" bgcolor="#9999ff" style="border:1px solid #303030;">
       <tr>
 
@@ -27,47 +28,84 @@
   </div>
   <form name="form1">
     <div class="checkbox-toggle"> 設定 </div>
-    <div class="checkboxes">
+    <div class="settingbox">
+      <span>---検査項目---</span>
+      <div class = "checkboxes">
       <label>
-        <input type="checkbox" id="checkbox1" name="check" value="IC">
-        <span>IC</span>
+        <input type="checkbox" id="checkbox1" name="check" value="IC" checked>
+      <label for ="checkbox1">IC</label>
       </label>
 
       <label>
-        <input type="checkbox" id="checkbox2" name="check" value="WORK">
-        <span>WORK</span>
+        <input type="checkbox" id="checkbox2" name="check" value="WORK" checked>
+        <label for ="checkbox2">ワーク</label>
+      </label>
+
+      <!--
+      <label>
+        <input type="checkbox" id="checkbox3" name="check" value="R">
+        <label for ="checkbox3">抵抗</label>
+      </label>
+      -->
+
+      <label>
+        <input type="checkbox" id="checkbox4" name="check" value="Di" checked>
+        <label for ="checkbox4">ダイオード</label>
+      </label>
+      </div>
+
+      
+      <div class = "checkboxes2">
+        <!--
+        <label>
+          <input type="checkbox" id="checkbox5" name="check" value="LED">
+        <label for ="checkbox5">LED</label>
+        </label>
+        -->
+  
+        <label>
+          <input type="checkbox" id="checkbox6" name="check" value="Tr" checked>
+          <label for ="checkbox6">トランジスタ</label>
+        </label>
+  
+        <label>
+          <input type="checkbox" id="checkbox7" name="check" value="DIPSw" checked>
+          <label for ="checkbox7">DIPスイッチ</label>
+        </label>
+        <label>
+          <input type="checkbox" id="checkbox8" name="check" value="BS" checked>
+          <label for ="checkbox8">電池ソケット</label>
+        </label>
+  
+        </div>
+      <label>
+        <input type="radio" name="resultsort" value="OK" class="OK">
+        <span>OKのみ</span>
       </label>
 
       <label>
-        <input type="checkbox" id="checkbox3" name="check" value="DIPSW">
-        <span>DIPSW</span>
+        <input type="radio" name="resultsort" value="NG" class="NG">
+        <span>NGのみ</span>
       </label>
 
-      <label>
-        <input type="checkbox" id="checkbox4" name="check" value="R">
-        <span>R</span>
-      </label>
-
-      <label>
-        <input type="radio" name="resultsort" value="OK" id="radio1">
-        <span>OK</span>
-      </label>
-
-      <label>
-        <input type="radio" name="resultsort" value="NG">
-        <span>NG</span>
-      </label>
       <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
-      <label>
-        <input type="date" name="term" id="term1">
-        <span>～</span>
-        <input type="date" name="term" id="term2">
+      <dev>---検査時刻---</dev>
+        <div>
+        <input type="date" name="term1" class="term1">
+        <input type="time" name="time1" class="time1">
+        </div>
+
+        <div><span>から</span></div>
+        <div>
+        <input type="date" name="term2" class="term2">
+        <input type="time" name="time2" class="time2">
+        </div>
+
         <span>まで</span>
-      </label>
-      <input type="submit" value="select" onclick="clickBtn1()" />
+
+      <input type="submit" value="select" class = "button" onclick="clickBtn1()" />
     </div>
   </form>
-  <button id="bt">hello</button>
 </body>
 <script>
 
@@ -80,9 +118,9 @@
     // チェックボックスの表示切替ボタンのクリックイベントを検知
     jQuery('.checkbox-toggle').on('click', function () {
       // チェックボックスの表示をslideToggleで切り替える
-      jQuery('.checkboxes ').slideToggle();
+      jQuery('.settingbox ').slideToggle();
       //jQuery('#gyouretu').slideToggle();
-      jQuery('.checkboxes').css('display', 'flex');
+      jQuery('.settingbox').css('display', 'flex');
     });
   });
 
@@ -101,14 +139,8 @@
     document.getElementById("span1").textContent = str;
   }
 
-
-
 </script>
+
 <script src="../js/table_Change.js"> </script>
-<br>○
-<br>
-<br>
-<span class="OK">○</span>
-<span class="NG">✕</span>
 
 </html>

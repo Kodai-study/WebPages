@@ -263,7 +263,7 @@ function addDetail(members, name) {
     if (target.classList.contains(name)) {
       target.onclick = () => { toggleDetails(name) };
       target.style.cursor = "pointer";
-      target.append(i);
+      //target.append(i);
       break;
     }
   }
