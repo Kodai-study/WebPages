@@ -74,9 +74,13 @@ function getDataWithAPI(params) {
     })
 }
 
+/**
+ * JSONファイルを読み取って、検査項目をテーブルのth
+ * に設定する。JSONは二次元配列
+ */
 function setTitle() {
   titleRow = table.insertRow();
-  fetch("../sample_json/result_Titles.json") // jsonファイルの場所
+  fetch("../sample_json/result_Titles.json")
     .then((response) => {
       return response.json();
     })
@@ -84,18 +88,23 @@ function setTitle() {
       colums = table.insertRow();
       members.forEach(element => {
         th = document.createElement('th');
-        th.append(element[1]);
-        th.classList.add(element[0]);
+        th.append(element[1]);        //1項目目はテーブルに表示される番号
+        th.classList.add(element[0]); //0項目目は検査パーツを表すID文字列
         colums.append(th);
-        addDetail(element.slice(2), element[0]);
+        addDetail(element.slice(2), element[0]); //2項目目以降は詳細項目
       })
     })
 }
 
-
+/**
+ * APIから取得したデータをテーブルの検査結果に入れる
+ * @param {json} members 
+ */
 function setResultWithAPI(members) {
   members.forEach(element => {
     row = table.insertRow();
+
+    /* 検査情報の追加 */
     createChild(row, element.workID, null, false);
     createChild(row, element.startTime, "ID", false);
     createChild(row, element.allResult, "ID", false);
@@ -103,6 +112,7 @@ function setResultWithAPI(members) {
     createChild(row, element.humidity, "ID", false);
     createChild(row, element.temprature, "ID", false);
 
+    /* ICの結果の代入 */
     {
       const ic = element.result.ic;
       createChild(row, ic.allResult, null);
@@ -118,7 +128,7 @@ function setResultWithAPI(members) {
       createChild(row, work.is_OK, "WORK");
       createChild(row, work.dir, "WORK");
     }
-
+    /* 抵抗の結果代入 */
     {
       //TODO 合格、不合格かなどを見て表示を見やすくする
       const resigter = element.result.r;
@@ -127,14 +137,14 @@ function setResultWithAPI(members) {
         createChild(row, resigter.results[i], "R");
       }
     }
-
+    /* ダイオードの結果代入 */
     {
       const diode = element.result.diode;
       createChild(row, diode.allResult, null);
       createChild(row, diode.dir, "DIODE");
       createChild(row, diode.have, "DIODE");
     }
-
+    /* LEDの結果代入 */
     {
       const LED = element.result.led;
       createChild(row, LED.allResult, null);
@@ -145,14 +155,14 @@ function setResultWithAPI(members) {
       createChild(row, LED.greenHave, "LED");
       createChild(row, LED.whiteHave, "LED");
     }
-
+    /* トランジスタの結果代入 */
     {
       const transistor = element.result.tr;
       createChild(row, transistor.allResult, null);
       createChild(row, transistor.dir, "TR");
       createChild(row, transistor.is_OK, "TR");
     }
-
+    /* DIPスイッチの結果代入 */
     {
       if (element.result.dipSw.allResult === "〇")
         createChild(row, element.result.dipSw.allResult, null);
@@ -164,7 +174,8 @@ function setResultWithAPI(members) {
 
 
 /**
- * 結果を表に入れていく。詳細項目は、親項目をクリックしたときに出てくるように設定する
+ * 結果を表に入れていく。
+ * テストのデータが入ったJSONから取ってくる
  * @param {結果のJSON} member 
  */
 function setResult(member) {
@@ -208,6 +219,7 @@ function setResult(member) {
  * @param {tr要素} row  要素を追加する行、CreateRowで作成されたtrタグの要素
  * @param {td要素の文字列} result 追加する文字列。セルが作成されてこの文字列が入る
  * @param {親になる大要素} partsName 親になる(そこから開閉する)大分類の要素。
+ * @param {boolean} isBool 結果が合否で表される者でない場合にfalseを入れる
  */
 function createChild(row, result, partsName, isBool) {
   let span = document.createElement("span");
