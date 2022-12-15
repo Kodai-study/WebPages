@@ -30,54 +30,41 @@
     <div class="checkbox-toggle"> 設定 </div>
     <div class="settingbox">
       <span>---検査項目---</span>
-      <div class = "checkboxes">
-      <label>
-        <input type="checkbox" id="checkbox1" name="check" value="IC" checked>
-      <label for ="checkbox1">IC</label>
-      </label>
+      <div class="checkboxes">
+        
+        <label>
+          <input type="checkbox" id="checkbox1" name="check" value="IC" checked>
+          <label for="checkbox1">IC</label>
+        </label>
 
-      <label>
-        <input type="checkbox" id="checkbox2" name="check" value="WORK" checked>
-        <label for ="checkbox2">ワーク</label>
-      </label>
+        <label>
+          <input type="checkbox" id="checkbox2" name="check" value="WORK" checked>
+          <label for="checkbox2">ワーク</label>
+        </label>
 
-      <!--
-      <label>
-        <input type="checkbox" id="checkbox3" name="check" value="R">
-        <label for ="checkbox3">抵抗</label>
-      </label>
-      -->
-
-      <label>
-        <input type="checkbox" id="checkbox4" name="check" value="Di" checked>
-        <label for ="checkbox4">ダイオード</label>
-      </label>
+        <label>
+          <input type="checkbox" id="checkbox3" name="check" value="Di" checked>
+          <label for="checkbox3">ダイオード</label>
+        </label>
       </div>
 
-      
-      <div class = "checkboxes2">
-        <!--
+      <div class="checkboxes2">
+
         <label>
-          <input type="checkbox" id="checkbox5" name="check" value="LED">
-        <label for ="checkbox5">LED</label>
+          <input type="checkbox" id="checkbox4" name="check" value="Tr" checked>
+          <label for="checkbox4">トランジスタ</label>
         </label>
-        -->
-  
+
         <label>
-          <input type="checkbox" id="checkbox6" name="check" value="Tr" checked>
-          <label for ="checkbox6">トランジスタ</label>
-        </label>
-  
-        <label>
-          <input type="checkbox" id="checkbox7" name="check" value="DIPSw" checked>
-          <label for ="checkbox7">DIPスイッチ</label>
+          <input type="checkbox" id="checkbox5" name="check" value="DIPSw" checked>
+          <label for="checkbox5">DIPスイッチ</label>
         </label>
         <label>
-          <input type="checkbox" id="checkbox8" name="check" value="BS" checked>
-          <label for ="checkbox8">電池ソケット</label>
+          <input type="checkbox" id="checkbox6" name="check" value="BS" checked>
+          <label for="checkbox6">電池ソケット</label>
         </label>
-  
-        </div>
+
+      </div>
       <label>
         <input type="radio" name="resultsort" value="OK" class="OK">
         <span>OKのみ</span>
@@ -90,20 +77,20 @@
 
       <!--TODO 時刻の最小(min)最大(max)のデータの型の取得-->
       <dev>---検査時刻---</dev>
-        <div>
+      <div>
         <input type="date" name="term1" class="term1">
         <input type="time" name="time1" class="time1">
-        </div>
+      </div>
 
-        <div><span>から</span></div>
-        <div>
+      <div><span>から</span></div>
+      <div>
         <input type="date" name="term2" class="term2">
         <input type="time" name="time2" class="time2">
-        </div>
+      </div>
 
-        <span>まで</span>
+      <span>まで</span>
 
-      <input type="submit" value="select" class = "button" onclick="clickBtn1()" />
+      <input type="submit" value="select" class="button" onclick="clickBtn1()" />
     </div>
   </form>
 </body>
